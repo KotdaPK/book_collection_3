@@ -1,0 +1,17 @@
+<%= link_to "Back to Books", books_path %>
+
+<div class="delete-book">
+  <h1>Delete Book</h1>
+
+  <p><strong>Title:</strong> <%= @book.title %></p>
+  <p><strong>Author:</strong> <%= @book.author %></p>
+  <p><strong>Price:</strong> <%= @book.price %></p>
+  <p><strong>Published Date:</strong> <%= @book.published_date %></p>
+
+  <%= form_for(@book, method: :delete) do |f| %>
+    <p>Are you sure you want to delete this book?</p>
+    <div class="form-buttons">
+      <%= f.submit("Delete") %>
+    </div>
+  <% end %>
+</div>
